@@ -129,4 +129,9 @@ object Dependencies {
     )
   )
 
+  val NatsStreaming = Seq(
+    libraryDependencies += "io.nats" % "java-nats-streaming" % "0.5.0-SNAPSHOT",  // MIT
+    resolvers += Resolver.sonatypeRepo("snapshots")
+  )
+
 }
