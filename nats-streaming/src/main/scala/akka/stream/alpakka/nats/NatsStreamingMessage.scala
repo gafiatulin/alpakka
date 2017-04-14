@@ -30,7 +30,7 @@ object IncomingMessageWithAck{
 }
 
 case class OutgoingMessage[T](data: T) extends NatsStreamingOutgoing[T]{
-  def transform[T2](f: (T) => T2): NatsStreamingOutgoing[T2] = OutgoingMessage(f(data))
+  def transform[T2](f: (T) => T2): OutgoingMessage[T2] = OutgoingMessage(f(data))
 }
 
 case class OutgoingMessageWithCompletion[T](data: T) extends NatsStreamingOutgoing[T]{
